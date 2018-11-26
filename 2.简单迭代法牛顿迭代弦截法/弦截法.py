@@ -6,6 +6,7 @@ def f(x):
     return eval(string)
 
 def ChordCut(a, b):
+
     f_a = f(a)
     f_b = f(b)
     k = (f_b - f_a)/(b - a)
@@ -14,18 +15,31 @@ def ChordCut(a, b):
     line = np.arange(-10,10,0.1)
     plt.figure(figsize=(8,8))
     plt.grid()
-    plt.plot([a, c],[f_a, 0], color = 'r')
-    plt.scatter([a, b], [f_a, f_b], color = 'g')
+    if c < b:
+        plt.plot([a, c],[f_a, 0], color = 'r')
+        plt.scatter([a, b], [f_a, f_b], color = 'g')
+    else:
+        plt.plot([b, c],[f_b, 0], color = 'r')
+        plt.scatter([a, b], [f_a, f_b], color = 'g')
     
     while f_a > 1e-8:
-        a = b
-        b = c
+        if c < b:
+            a = b
+            b = c
+        else:
+            b = a
+            a = c
+            
         f_a = f(a)
         f_b = f(b)
         k = (f_b - f_a)/(b - a)
         c = a - f_a / k
-        plt.plot([a, c],[f_a, 0], color = 'r')
-        plt.scatter([a, b], [f_a, f_b], color = 'g')
+        if c < b:
+            plt.plot([a, c],[f_a, 0], color = 'r')
+            plt.scatter([a, b], [f_a, f_b], color = 'g')
+        else:
+            plt.plot([b, c],[f_b, 0], color = 'r')
+            plt.scatter([a, b], [f_a, f_b], color = 'g')
     
     plt.plot(line,f(line))
     plt.show()

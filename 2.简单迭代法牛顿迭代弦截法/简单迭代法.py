@@ -36,7 +36,7 @@ def simpleIteration(x_data):
         print("此函数牛顿法不收敛")
         
 
-#实例公式1：(x**2 + 4*x+1)**(1/3)
+#实例公式1：(x**2 + 4*x+1)**(1/2)
 
 while True:
     global string
