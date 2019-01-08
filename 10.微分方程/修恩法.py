@@ -37,7 +37,6 @@ x_end = 5
 #可以显示中文
 plt.rcParams["font.sans-serif"] = ["SimHei"]
 plt.rcParams['axes.unicode_minus'] = False
-print("1607094240 曾祥玖")
 x, y = euler(fc, x0, y0, lenth, x_start, x_end)
 plt.figure(figsize=(10,10))
 plt.xlabel('X')
