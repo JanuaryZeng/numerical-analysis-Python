@@ -1,3 +1,4 @@
+[![Security Status](https://s.murphysec.com/badge/JanuaryZeng/numerical-analysis-Python.svg)](https://www.murphysec.com/p/JanuaryZeng/numerical-analysis-Python)
 # 数值分析python实现
 秦品乐数值分析作业的python实现
 
